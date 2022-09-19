@@ -17,7 +17,16 @@ class Gericht
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    private ?string $bild = null;
+
+    #[ORM\ManyToOne(targetEntity: Kategorie::class, inversedBy: 'gericht')]
+    private $kategorie;
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $beschreibung = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $preis = null;
 
     public function getId(): ?int
     {
@@ -44,6 +53,42 @@ class Gericht
     public function setBeschreibung(?string $beschreibung): self
     {
         $this->beschreibung = $beschreibung;
+
+        return $this;
+    }
+
+    public function getPreis(): ?float
+    {
+        return $this->preis;
+    }
+
+    public function setPreis(?float $preis): self
+    {
+        $this->preis = $preis;
+
+        return $this;
+    }
+
+    public function getBild(): ?string
+    {
+        return $this->bild;
+    }
+
+    public function setBild(?string $bild): self
+    {
+        $this->bild = $bild;
+
+        return $this;
+    }
+
+    public function getKategorie(): ?Kategorie
+    {
+        return $this->kategorie;
+    }
+
+    public function setKategorie(?Kategorie $kategorie): self
+    {
+        $this->kategorie = $kategorie;
 
         return $this;
     }

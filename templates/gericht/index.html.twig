@@ -3,6 +3,13 @@
 {% block title %}Hello GerichtController!{% endblock %}
 
 {% block body %}
+
+{% for message in app.flashes('erfolg') %}
+    <div class="alert alert-success">
+        <h3>{{ message }}</h3>
+    </div>
+{% endfor %}
+
 <br>
 <div class="container">
     <h2>Gerichte bearbeiten</h2>
@@ -13,16 +20,25 @@
                 <td>Bestell Nr.</td>
                 <td>Name</td>
                 <td>Beschreibung</td>
+                <td>Kategorie</td>
+                <td>Preis</td>
+                <td>Löschen</td>
+                <td><a href="{{ path ('app_gericht.anlegen') }}">Anlegen</td>
             </tr>
         </thead>
         <tbody>
-            {% for gericht in gerichte %}
+        {% for gericht in gerichte %}
             <tr>
                 <td>{{gericht.id}}</td>
-                <td>{{gericht.name}}</td>
+                <!-- Tabellenspalte "Name" in der Browseransicht -->
+                <td><a href="{{ path ('app_gericht.anzeigen',{id: gericht.id}) }}">{{gericht.name}}</td>
                 <td>{{gericht.Beschreibung}}</td>
+                <td>{{gericht.Kategorie}}</td>
+                <td>{{gericht.preis}}</td>
+                <td><a href="{{ path ('app_gericht.entfernen', {id: gericht.id}) }}">X</td>
+                <td></td>
             </tr>
-            {% endfor %}
+        {% endfor %}
         </tbody>
     </table>
 </div>

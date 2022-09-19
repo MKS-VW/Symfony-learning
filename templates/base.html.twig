@@ -38,7 +38,7 @@
 	<!-- Header section -->
 	<header class="header-section clearfix">
 		<a href="index.html" class="site-logo">
-			<img src="{{ asset('img/logo.png') }}" alt="">
+			<img src="{{ asset ('img/logo.png') }}" alt="">
 		</a>
 		<div class="header-right">
 			<a href="#" class="hr-btn">Help</a>
@@ -55,8 +55,8 @@
 			<li><a href="contact.html">Contact</a></li>
 			<li><a href="#">Mitarbeiter</a>
 				<ul class="sub-menu">
-					<li><a href="{{ path('app_gericht.bearbeiten') }}">Gerichte</a></li>
-					<li><a href="playlist.html">Playlist</a></li>
+					<li><a href="{{ path ('app_gericht.bearbeiten') }}">Gerichte</a></li>
+					<li><a href="{{ path ('app_gericht.anlegen') }}">Anlegen</a></li>
 					<li><a href="artist.html">Artist</a></li>
 					<li><a href="blog.html">Blog</a></li>
 					<li><a href="contact.html">Contact</a></li>
@@ -67,7 +67,7 @@
 	<!-- Header section end -->
 	{% block body %}{% endblock %}
 	<!-- Hero section -->
-	<section class="hero-section">
+	{# <section class="hero-section">
 		<div class="hero-slider owl-carousel">
 			<div class="hs-item">
 				<div class="container">
@@ -108,7 +108,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> #}
 	<!-- Hero section end -->
 
 	<!-- Intro section -->
