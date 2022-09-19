@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>SolMusic | HTML Template</title>
+	<title>Food | HTML Template</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="SolMusic HTML Template">
 	<meta name="keywords" content="music, html">
@@ -55,7 +55,7 @@
 		</div>
 		<ul class="main-menu">
 			<li><a href="{{ path('app_home') }}">Willkommen</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="{{ path('app_menu') }}">Menükarte</a></li>
 			<li><a href="blog.html">News</a></li>
 			<li><a href="contact.html">Contact</a></li>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -146,7 +146,7 @@
 								<h2>About us</h2>
 								<ul>
 									<li><a href="">Our Story</a></li>
-									<li><a href="">Sol Music Blog</a></li>
+									<li><a href=""> Food Blog</a></li>
 									<li><a href="">History</a></li>
 								</ul>
 							</div>

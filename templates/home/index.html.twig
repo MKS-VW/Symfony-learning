@@ -4,6 +4,46 @@
 
 {% block body %}
 
-<h1>Willkommen zur Menukarte</h1>
-
+<section class="hero-section">
+	<div class="hero-slider owl-carousel">
+		<div class="hs-item">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="hs-text">
+							<h2><span>{{gericht1.name}}</span>!</h2>
+							<p>Probieren Sie jetzt, {{gericht1.beschreibung}} für nur {{gericht1.preis}}! Exklusiv als Gericht des Tages. </p>
+							<a href="{{ path('app_menu') }}" class="site-btn">Menükarte</a>
+							<a href="#" class="site-btn sb-c2">Bestellen</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="hr-img">
+							<img src="{{asset ('bilder/' ~ gericht1.bild)}}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hs-item">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="hs-text">
+							<h2><span>{{gericht2.name}}</span>!</h2>
+							<p>Probieren Sie jetzt, {{gericht2.beschreibung}} für nur {{gericht2.preis}}! Exklusiv als Gericht des Tages. </p>
+							<a href="{{ path('app_menu') }}" class="site-btn">Menükarte</a>
+							<a href="#" class="site-btn sb-c2">Bestellen</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="hr-img">
+							<img src="{{asset ('bilder/' ~ gericht2.bild)}}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 {% endblock %}
