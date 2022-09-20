@@ -56,14 +56,14 @@
 		<ul class="main-menu">
 			<li><a href="{{ path('app_home') }}">Willkommen</a></li>
 			<li><a href="{{ path('app_menu') }}">Menükarte</a></li>
-			<li><a href="blog.html">News</a></li>
+			<li><a href="{{ path('app_bestellung') }}">Bestellung</a></li>
 			<li><a href="contact.html">Contact</a></li>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 				<li><a href="#">Mitarbeiter</a>
 					<ul class="sub-menu">
 						<li><a href="{{ path ('app_gericht.bearbeiten') }}">Gerichte</a></li>
 						<li><a href="{{ path ('app_gericht.anlegen') }}">Anlegen</a></li>
-						<li><a href="artist.html">Artist</a></li>
+						<li><a href="{{ path ('app_bestellung') }}">Bestellungen</a></li>
 						<li><a href="{{ path ('app_reg') }}">Registrieren</a></li>
 						<li><a href="{{ path ('app_logout') }}">Logout</a></li>
 					</ul>
@@ -195,6 +195,8 @@
 	<!-- Footer section end -->
 	
 	<!--====== Javascripts & Jquery ======-->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>

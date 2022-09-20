@@ -61,9 +61,9 @@ class GerichtController extends AbstractController
     #[Route('/entfernen/{id}', name: 'entfernen')]
     public function entfernen($id, GerichtRepository $gr, ManagerRegistry $doctrine){
         
-        $em = $doctrine->getManager();  // Tabellenmanager
-        $gericht = $gr->find($id);   // query aus GRep-Klasse bekommt ID aus URL übergeben und liefert DSatz an $gericht
-        $em->remove($gericht);    // sobald URL von twig aufgerufen, wird TZeile, die identisch mit $gericht ist, gelöscht
+        $em = $doctrine->getManager();
+        $gericht = $gr->find($id);
+        $em->remove($gericht);
         $em->flush();
 
         //message
