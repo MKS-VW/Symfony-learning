@@ -57,7 +57,7 @@
 			<li><a href="{{ path('app_home') }}">Willkommen</a></li>
 			<li><a href="{{ path('app_menu') }}">Menükarte</a></li>
 			<li><a href="{{ path('app_bestellung') }}">Bestellung</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="{{ path('app_mail') }}">Kellner</a></li>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 				<li><a href="#">Mitarbeiter</a>
 					<ul class="sub-menu">

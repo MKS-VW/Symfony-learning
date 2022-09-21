@@ -23,12 +23,13 @@
     
         <tbody>
             {% for bestellung in bestellungen %}
+            {% if bestellung.status != 'archiv' %}
             {% set summe = summe + bestellung.preis %}
-                <tr>
+            <tr>
                     <td>{{bestellung.bnummer}}</td>
                     <td>{{bestellung.name}}</td>
                     <td>{{bestellung.preis}}</td>
-
+                    
                     {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                     <td>{{bestellung.status}}</td>
                     {% endif %}
@@ -39,7 +40,7 @@
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{bestellung.status}}
                             </a>
-                        
+                            
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ path('status',{id: bestellung.id, status: 'offen'}) }}">offen</a></li>
                                 <li><a class="dropdown-item" href="{{ path('status',{id: bestellung.id, status: 'fertig'}) }}">fertig</a></li>
@@ -48,12 +49,13 @@
                         </div>
                     </td>
                     {% endif %}
-
+                    
                     {% if bestellung.status == "offen" %}
                     <td><a class="btn btn-outline-danger btn-sm" href={{ path('loeschen',{id: bestellung.id})}} role="button">Entfernen</a></td>
                     {% endif %}
                     
                 </tr>
+            {% endif %}
             {% endfor %}
             <td></td><td></td>
             <td>{{summe}} €</td>
