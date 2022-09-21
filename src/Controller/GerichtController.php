@@ -69,7 +69,7 @@ class GerichtController extends AbstractController
         //message
         $this->addFlash('erfolg','Gericht wurde erfolgreich entfernt');
 
-        return $this->redirect($this->generateUrl('app_gericht.bearbeiten'));  //kehrt zurück
+        return $this->redirect($this->generateUrl('app_gericht.bearbeiten'));
     }
 
     #[Route('/anzeigen/{id}', name: 'anzeigen')]
