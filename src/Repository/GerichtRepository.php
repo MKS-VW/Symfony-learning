@@ -39,6 +39,15 @@ class GerichtRepository extends ServiceEntityRepository
         }
     }
 
+    public function find5Euro(int $id)
+    {
+        $qb = $this->createQueryBuilder('g');
+        $qb ->select('g.name, g.preis')
+            ->where('g.preis <= 5');
+        return $qb->getQuery()->getResult();
+    }
+
+
 //    /**
 //     * @return Gericht[] Returns an array of Gericht objects
 //     */
