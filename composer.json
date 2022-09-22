@@ -10,6 +10,7 @@
         "doctrine/doctrine-bundle": "^2.7",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
+        "easycorp/easyadmin-bundle": "^4.3",
         "friendsoftwig/twigcs": "^6.0",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/amazon-mailer": "6.1.*",

@@ -34,6 +34,8 @@ security:
         - { path: ^/login, roles: PUBLIC_ACCESS }   # für angemeldete wird die Anmeldeseite nicht mehr Verfügbar sein
         - { path: ^/gericht, roles: ROLE_USER }     # Nur angemeldete "ROLE_USER" können Seite betreten
         - { path: ^/reg, roles: ROLE_USER }         # Nur angemeldete können sich Registrieren
+        - { path: ^/admin, roles: ROLE_USER }       # Easy Admin
+
 
 when@test:
     security:
