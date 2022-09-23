@@ -90,4 +90,3 @@ class GerichtController extends AbstractController
         
     }
 }
-
