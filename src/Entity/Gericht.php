@@ -28,6 +28,9 @@ class Gericht
     #[ORM\Column(nullable: true)]
     private ?float $preis = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?float $elo = 1500;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Gericht
     public function setKategorie(?Kategorie $kategorie): self
     {
         $this->kategorie = $kategorie;
+
+        return $this;
+    }
+
+    public function getElo(): ?float
+    {
+        return $this->elo;
+    }
+
+    public function setElo(float $elo): self
+    {
+        $this->elo = $elo;
 
         return $this;
     }

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Küchenschlacht{% endblock %}
+
+{% block body %}
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{gericht1.name}}</h3>
+            </div>  
+            <div class="col-lg-6">
+                <h2>{{gericht1.elo}}</h2>
+            </div>  
+            <div class="row">
+                <a href="{{ path('vote',{id1: gericht1.id, id2: gericht2.id}) }}">
+                    <img src="{{asset ('bilder/' ~ gericht1.bild)}}" alt="">
+                </a>
+            </div>  
+        </div>  
+    </div>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{gericht2.name}}</h3>
+            </div>
+            <div class="col-lg-6">
+                <h2>{{gericht2.elo}}</h2>
+            </div>  
+            <div class="row">
+                <a href="{{ path('vote',{id1: gericht2.id, id2: gericht1.id}) }}">
+                    <img src="{{asset ('bilder/' ~ gericht2.bild)}}" alt="">
+                </a>
+            </div>  
+        </div>  
+    </div>
+</div>
+
+{% endblock %}

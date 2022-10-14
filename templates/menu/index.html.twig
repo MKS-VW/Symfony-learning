@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MenuController!{% endblock %}
+{% block title %}Menükarte{% endblock %}
 
 {% block body %}
 
@@ -26,19 +26,17 @@
         </div>                                              
         <div class="clearfix"></div>
         <div class="row playlist-area">
-            
-        {% for gericht in gerichte %}
-        <div class="mix col-lg-3 col-md-4 col-sm-6 {{gericht.kategorie}}">
-            <div class="playlist-item">
-                <img src="{{asset ('bilder/' ~ gericht.bild)}}">
-                <h5>{{gericht.beschreibung}} - EUR {{gericht.preis}}</h5>
-                <p>BestNr. {{gericht.id}}</p>
-                <a class="btn btn-outline-danger btn-sm" href={{ path('bestellen',{id: gericht.id})}} role="button">Bestellen</a>
+            {% for gericht in gerichte %}
+            <div class="mix col-lg-3 col-md-4 col-sm-6 {{gericht.kategorie}}">
+                <div class="playlist-item">
+                    <img src="{{asset ('bilder/' ~ gericht.bild)}}">
+                    <h5>{{gericht.beschreibung}} - EUR {{gericht.preis}}</h5>
+                    <p>BestNr. {{gericht.id}}</p>
+                    <a class="btn btn-outline-danger btn-sm" href={{ path('bestellen',{id: gericht.id})}} role="button">Bestellen</a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-
-    </div>
     </div>
 </section>
 {% endblock %}
