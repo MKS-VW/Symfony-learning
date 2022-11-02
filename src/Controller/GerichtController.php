@@ -50,7 +50,7 @@ class GerichtController extends AbstractController
             $gericht->setBild($dateiname);
             $em->persist($gericht);
             $em->flush();
-            return $this->redirect($this->generateUrl('app_gericht.bearbeiten'));  //kehrt zurück
+            return $this->redirect($this->generateUrl('app_gericht.bearbeiten'));
         }
 
         return $this->render('gericht/anlegen.html.twig', [

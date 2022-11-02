@@ -1,9 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Küchenschlacht{% endblock %}
+{% block title %}Duell{% endblock %}
 
 {% block body %}
 
+{% for message in app.flashes('erfolg') %}
+    <div class="alert alert-success">
+        <h3>{{ message }}</h3>
+    </div>
+{% endfor %}
 
 <div class="row">
     <div class="col-lg-6">
